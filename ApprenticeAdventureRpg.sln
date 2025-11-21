@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprenticeAdventureRpg", "ApprenticeAdventureRpg.csproj", "{1835975D-3E22-4913-9315-5F2F607AF746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprenticeAdventureRpg", "ApprenticeAdventureRpg.csproj", "{C58EC873-69BD-4DFD-811F-419F610CE973}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1835975D-3E22-4913-9315-5F2F607AF746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1835975D-3E22-4913-9315-5F2F607AF746}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1835975D-3E22-4913-9315-5F2F607AF746}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{1835975D-3E22-4913-9315-5F2F607AF746}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{1835975D-3E22-4913-9315-5F2F607AF746}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{1835975D-3E22-4913-9315-5F2F607AF746}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{C58EC873-69BD-4DFD-811F-419F610CE973}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

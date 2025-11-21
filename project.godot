@@ -11,12 +11,37 @@ config_version=5
 [application]
 
 config/name="ApprenticeAdventureRpg"
+run/main_scene="uid://ci64u4wj0mcaa"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameFlowController="*res://scenes/global_scripts/GameFlowController.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
-project/assembly_name="TestRpg"
+project/assembly_name="ApprenticeAdventureRpg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+
+[gdunit4]
+
+settings/common/update_notification_enabled=false
+settings/test/test_discovery=true
+ui/toolbar/run_overall=true
+
+[gui]
+
+theme/custom="uid://yb2bibh75evk"
 
 [rendering]
 
