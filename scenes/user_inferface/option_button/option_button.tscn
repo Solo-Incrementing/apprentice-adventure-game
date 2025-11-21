@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg4c78xvouuco"]
+
+[ext_resource type="Theme" uid="uid://yb2bibh75evk" path="res://assets/resources/themes/main_theme.tres" id="1_0unbt"]
+
+[node name="OptionButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_0unbt")
+theme_type_variation = &"ChoiceButton"

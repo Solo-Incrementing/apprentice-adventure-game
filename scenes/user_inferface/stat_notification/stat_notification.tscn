@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ynog5b6myeen"]
+
+[ext_resource type="Theme" uid="uid://yb2bibh75evk" path="res://assets/resources/themes/main_theme.tres" id="1_42os2"]
+[ext_resource type="Script" uid="uid://dpwmuy30myijg" path="res://scenes/user_inferface/stat_notification/StatNotification.cs" id="2_1vj4s"]
+
+[node name="StatNotification" type="PanelContainer" node_paths=PackedStringArray("StatLabel")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -39.0
+offset_right = 295.0
+offset_bottom = 39.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_42os2")
+theme_type_variation = &"NegativeStatNotificationContainer"
+script = ExtResource("2_1vj4s")
+StatLabel = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_42os2")
+theme_type_variation = &"NegativeStatNotificationLabel"
+text = "STAT NOTIFICATION"

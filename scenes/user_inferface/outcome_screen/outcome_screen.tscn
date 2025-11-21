@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://d24s5ec2ne1lg"]
+
+[ext_resource type="Theme" uid="uid://yb2bibh75evk" path="res://assets/resources/themes/main_theme.tres" id="1_ixd7m"]
+[ext_resource type="Texture2D" uid="uid://bl00nv3eacdwy" path="res://assets/images/backgrounds/outcome_meeting.png" id="2_ixd7m"]
+[ext_resource type="Script" uid="uid://b3ndikkvna2ry" path="res://scenes/user_inferface/outcome_screen/OutcomeScreen.cs" id="2_wwylu"]
+
+[node name="OutcomeScreen" type="Control" node_paths=PackedStringArray("ApprenticeshipLabel", "HealthLabel", "ReputationLabel", "JobProgressLabel", "MainMenuButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ixd7m")
+script = ExtResource("2_wwylu")
+ApprenticeshipLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ApprenticeshipLabel")
+HealthLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HealthLabel")
+ReputationLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ReputationLabel")
+JobProgressLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/JobLabel")
+MainMenuButton = NodePath("PanelContainer/MarginContainer/VBoxContainer/Button")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ixd7m")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"OutcomePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HeadingLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ApprenticeshipLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "You failed your apprenticeship."
+
+[node name="HealthLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "You are completely burnt out."
+
+[node name="ReputationLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Your coworkers did not request to keep contact"
+
+[node name="JobLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "You were fired from the company."
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BonusChoiceButton"
+text = "Return to Main Menu"
