@@ -1,0 +1,260 @@
+[gd_scene load_steps=7 format=3 uid="uid://4bo1im4jiyg"]
+
+[ext_resource type="Script" uid="uid://d078q567yrar2" path="res://scenes/game_state_machine/GameStateMachine.cs" id="1_rtr0v"]
+[ext_resource type="PackedScene" uid="uid://bg4c78xvouuco" path="res://scenes/user_inferface/option_button/option_button.tscn" id="2_tg3ao"]
+[ext_resource type="Theme" uid="uid://yb2bibh75evk" path="res://assets/resources/themes/main_theme.tres" id="3_yih8w"]
+[ext_resource type="Texture2D" uid="uid://nqaa65lpenf0" path="res://assets/images/backgrounds/bedroom_morning.png" id="5_pjkcn"]
+[ext_resource type="Texture2D" uid="uid://lxq2e7d0dqdg" path="res://assets/images/characters/software_engineer.png" id="6_1wrij"]
+[ext_resource type="PackedScene" uid="uid://ynog5b6myeen" path="res://scenes/user_inferface/stat_notification/stat_notification.tscn" id="6_saibq"]
+
+[node name="GameStateMachine" type="Node" node_paths=PackedStringArray("BackgroundDisplay", "CharacterDisplay", "DayLabel", "TimeLabel", "DialogueLabel", "SpeakerLabel", "OptionsContainer", "NotificationsContainer", "ContinueButton")]
+script = ExtResource("1_rtr0v")
+BackgroundDisplay = NodePath("Screen/BackgroundTextureRect")
+CharacterDisplay = NodePath("Screen/CharacterMarginContainer/VBoxContainer/CharacterHBoxContainer/CharacterTextureRect")
+DayLabel = NodePath("Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer/MarginContainer/VBoxContainer/DayLabel")
+TimeLabel = NodePath("Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer/MarginContainer/VBoxContainer/TimeLabel")
+DialogueLabel = NodePath("Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer/DialogueLabel")
+SpeakerLabel = NodePath("Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer/SpeakerLabel")
+OptionsContainer = NodePath("Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/OptionsContainer")
+NotificationsContainer = NodePath("Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/MarginContainer/NotificationsContainer")
+ContinueButton = NodePath("Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ContinueButton")
+ChoiceButtonScene = ExtResource("2_tg3ao")
+StatNotificationScene = ExtResource("6_saibq")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_yih8w")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_pjkcn")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TempVisualiserPanel" type="Panel" parent="Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterMarginContainer" type="MarginContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/CharacterMarginContainer"]
+layout_mode = 2
+
+[node name="TopSpacer" type="Control" parent="Screen/CharacterMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="CharacterHBoxContainer" type="HBoxContainer" parent="Screen/CharacterMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 80.0
+alignment = 2
+
+[node name="Spacer" type="Control" parent="Screen/CharacterMarginContainer/VBoxContainer/CharacterHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 67.0
+
+[node name="CharacterTextureRect" type="TextureRect" parent="Screen/CharacterMarginContainer/VBoxContainer/CharacterHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 33.0
+texture = ExtResource("6_1wrij")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MainMarginContainer" type="MarginContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempVisualiser" type="PanelContainer" parent="Screen/MainMarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GameLayout" type="VBoxContainer" parent="Screen/MainMarginContainer"]
+layout_mode = 2
+
+[node name="TopSection" type="HBoxContainer" parent="Screen/MainMarginContainer/GameLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Screen/MainMarginContainer/GameLayout/TopSection"]
+custom_minimum_size = Vector2(320, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"DayTimePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 10.0
+alignment = 1
+
+[node name="DayLabel" type="Label" parent="Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "DAY 0"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Screen/MainMarginContainer/GameLayout/TopSection/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "9:00 AM"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Screen/MainMarginContainer/GameLayout/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 90.0
+
+[node name="PauseButton" type="Button" parent="Screen/MainMarginContainer/GameLayout/TopSection"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "II"
+
+[node name="BottomSection" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 80.0
+
+[node name="TopHalf" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 60.0
+
+[node name="MiddleSection" type="HBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 30.0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="NotificationsContainer" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 30.0
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 35.0
+theme_override_constants/separation = 24
+
+[node name="Button" type="Button" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"ChoiceButton"
+text = "Option 1
+"
+
+[node name="Button2" type="Button" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"ChoiceButton"
+text = "Option 2
+"
+
+[node name="Button3" type="Button" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"ChoiceButton"
+text = "Option 3"
+
+[node name="Button4" type="Button" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"ChoiceButton"
+text = "Option 4"
+
+[node name="Spacer" type="Control" parent="Screen/MainMarginContainer/GameLayout/BottomSection/TopHalf/MiddleSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 35.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection"]
+layout_mode = 2
+size_flags_stretch_ratio = 40.0
+theme_type_variation = &"DialoguePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SpeakerLabel" type="Label" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "SPEAKER"
+
+[node name="DialogueLabel" type="Label" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "INSERT DIALOGUE HERE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ContinueButton" type="Button" parent="Screen/MainMarginContainer/GameLayout/BottomSection/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ContinueButton"
+text = "Continue"
