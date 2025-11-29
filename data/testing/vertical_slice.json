@@ -1,0 +1,621 @@
+[
+  {
+    "Id": 0,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "A new day begins!",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [{ "NextScenarioIndex": 1, "Requirements": [] }]
+  },
+  {
+    "Id": 1,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You wake up to your alarm.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [{ "NextScenarioIndex": 2, "Requirements": [] }]
+  },
+  {
+    "Id": 2,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You think about what to do next...",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 17,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 540
+          }
+        ]
+      },
+      {
+        "NextScenarioIndex": 3,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "There is time for morning activities! What do you want to do?",
+    "IsMajorDecision": false,
+    "DecisionOptions": [
+      {
+        "Text": "Sleep more",
+        "NextNodeIndex": 4,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 480
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Health",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          }
+        ]
+      },
+      {
+        "Text": "Eat breakfast",
+        "NextNodeIndex": 6,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 375
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 390
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Health",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 15,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      },
+      {
+        "Text": "Brush",
+        "NextNodeIndex": 7,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 360
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 375
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Reputation",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 15,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      },
+      {
+        "Text": "Use mobile phone",
+        "NextNodeIndex": 8,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 360
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 480
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Reputation",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "StatName": "Health",
+            "Operation": "Change",
+            "Value": -1,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 120,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Shower",
+        "NextNodeIndex": 9,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 390
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 420
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Reputation",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 30,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      },
+      {
+        "Text": "Exercise",
+        "NextNodeIndex": 10,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 420
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 480
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Health",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Prepare for work",
+        "NextNodeIndex": 11,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 420
+          },
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 510
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Reputation",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      }
+    ],
+    "NextScenarios": []
+  },
+  {
+    "Id": 4,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You snooze your alarm and sleep a little more to be well rested.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 5,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You wake up to your alarm again!",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You take some time to prepare and enjoy a nutritious breakfast.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You remember the lunchtime incident and make sure to brush early.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You like your colleagues' social media posts. You think it's been a few minutes, but two hours go by and your head hurts.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You make sure to shower. It won't make your colleagues like you but at least they will tolerate you.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You go out for a jog and do some body weight training. It's hard time consuming work but you can feel your mind heal.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 2,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You start preparing for work. You put on the appropriate attire, fix your hair and check for any missing things.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 16,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 540
+          }
+        ]
+      },
+      {
+        "NextScenarioIndex": 12,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You think through your options for the day...",
+    "IsMajorDecision": true,
+    "DecisionOptions": [
+      {
+        "Text": "Work from home",
+        "NextNodeIndex": 13,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "StatName": "Job Progress",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          },
+          {
+            "StatName": "Apprenticeship Progress",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          }
+        ]
+      },
+      {
+        "Text": "Go to office",
+        "NextNodeIndex": 14,
+        "Requirements": [
+          {
+            "StatName": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 540
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Job Progress",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          },
+          {
+            "StatName": "Apprenticeship Progress",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          },
+          {
+            "StatName": "Reputation",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Call in sick",
+        "NextNodeIndex": 15,
+        "Requirements": [
+          {
+            "StatName": "Health",
+            "Comparison": "LessThan",
+            "ComparisonValue": 40
+          }
+        ],
+        "Modifiers": [
+          {
+            "StatName": "Health",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Set",
+            "Value": 1080,
+            "IsEffectPositive": false,
+            "Significance": "Significant"
+          }
+        ]
+      }
+    ],
+    "NextScenarios": []
+  },
+  {
+    "Id": 13,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "Sometimes you need the comfort of home to be productive. You decide to work from home today.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "StatName": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Set",
+            "Value": 360,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "Today feels like a good day to go to the office. You spend an hour to commute to work.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "StatName": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Set",
+            "Value": 360,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You call your manager and tell him you are too sick to work today. You rest for the entire work day.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "StatName": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "StatName": "Time",
+            "Operation": "Set",
+            "Value": 360,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You realise it's too late to go to the office...",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 12,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "Background": "BedroomMorning",
+    "Speaker": "Narrator",
+    "Dialogue": "You notice the clock in the corner of your eye. It's already 9am!",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 16,
+        "Requirements": []
+      }
+    ]
+  }
+]
