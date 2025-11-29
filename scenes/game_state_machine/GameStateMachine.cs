@@ -1,5 +1,6 @@
 using Godot;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 public partial class GameStateMachine : Node
@@ -8,7 +9,6 @@ public partial class GameStateMachine : Node
     private GameStats _gameStats { get; set; } = new GameStats();
 
     private int _currentScenarioId = 0;
-    private const string STORY_FILE_PATH = "res://data/story_data/story_data_vertical_slice.json";
 
     // UI references
     [Export] public TextureRect BackgroundDisplay { get; set; } = null!;
@@ -25,7 +25,7 @@ public partial class GameStateMachine : Node
 
     public override void _Ready()
     {
-        _storyGraph = JsonStoryLoader.LoadStory(STORY_FILE_PATH);
+        _storyGraph = JsonStoryLoader.LoadStory(Constants.STORY_FILE_PATHS);
         if (!_storyGraph.Any())
         {
             GD.PrintErr("FATAL ERROR: Story graph failed to load or is empty.");
@@ -37,7 +37,7 @@ public partial class GameStateMachine : Node
             ContinueButton.Pressed += OnNextButtonPressed;
         }
 
-        GoToScenario(_storyGraph.First().Key);
+        GoToScenario(Constants.START_SCENARIO_ID);
         UpdateStatsUI();
     }
 
@@ -83,7 +83,7 @@ public partial class GameStateMachine : Node
 
         foreach (var req in requirements)
         {
-            int statValue = _gameStats.GetStat(req.StatName);
+            int statValue = _gameStats.GetStat(req.Stat);
             bool passed = false;
 
             switch (req.Comparison)
@@ -240,7 +240,7 @@ public partial class GameStateMachine : Node
                 break;
         }
 
-        notificationText += $" {statModifier.StatName}";
+        notificationText += $" {EnumNameMapper.GetStatName(statModifier.Stat)}";
 
         statNotificationInstance.Setup(notificationText, statModifier.IsEffectPositive);
 
@@ -249,7 +249,7 @@ public partial class GameStateMachine : Node
 
     public void CheckForGameEndCondition()
     {
-        if (_gameStats.DayNumber > GameStats.FINAL_DAY)
+        if (_gameStats.DayNumber > Constants.FINAL_DAY)
         {
             EndGame();
         }

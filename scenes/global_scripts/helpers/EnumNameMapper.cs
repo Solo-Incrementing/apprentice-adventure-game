@@ -7,12 +7,27 @@ public static class EnumNameMapper
         {CharacterType.Narrator, ""},
         {CharacterType.SoftwareEngineer, "Software Engineer"},
         {CharacterType.SeniorSoftwareEngineer, "Senior Software Engineer"},
-        {CharacterType.Coworker1, "Finance Coworker"},
-        {CharacterType.Coworker2, "Other Deparment Coworker"}
+        {CharacterType.FinanceCoworker, "Finance Coworker"},
+        {CharacterType.HrCoworker, "HR Coworker"}
+    };
+
+    private static readonly Dictionary<Stat, string> StatMap = new()
+    {
+        {Stat.Time, "Time" },
+        {Stat.Health, "Health" },
+        {Stat.Reputation, "Reputation" },
+        {Stat.Day, "Day" },
+        {Stat.Job, "Job Progress" },
+        {Stat.Apprenticeship, "Apprenticeship Progress" }
     };
 
     public static string GetCharacterName(CharacterType key)
     {
         return CharacterMap.TryGetValue(key, out var path) ? path : string.Empty;
+    }
+
+    public static string GetStatName(Stat key)
+    {
+        return StatMap.TryGetValue(key, out var path) ? path : string.Empty;
     }
 }

@@ -4,9 +4,6 @@
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="scenes\ClassDiagram1.cd" />
-  </ItemGroup>
 	<ItemGroup>
      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
      <PackageReference Include="gdUnit4.api" Version="5.1.0-rc1" />

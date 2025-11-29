@@ -6,44 +6,52 @@ using System.Text.Json.Serialization;
 
 public static class JsonStoryLoader
 {
-    public static Dictionary<int, Scenario> LoadStory(string filePath)
+    public static Dictionary<int, Scenario> LoadStory(string[] filePaths)
     {
-        string jsonText = ReadFile(filePath);
+        List<Scenario> finalScenarioList = new List<Scenario>();
 
-        if (string.IsNullOrEmpty(jsonText))
+        foreach (var path in filePaths)
         {
-            GD.PrintErr($"Failed to read file: {filePath}");
-            return new Dictionary<int, Scenario>();
+            string jsonText = ReadFile(path);
+
+            if (string.IsNullOrEmpty(jsonText))
+            {
+                GD.PrintErr($"Failed to read file: {path}");
+                return new Dictionary<int, Scenario>();
+            }
+
+            List<Scenario>? scenarioList;
+
+            try
+            {
+                scenarioList = JsonSerializer.Deserialize<List<Scenario>>(jsonText, GetSerializerOptions());
+            }
+            catch (JsonException ex)
+            {
+                GD.PrintErr($"JSON Deserialization Error in {path}: {ex.Message}");
+                return new Dictionary<int, Scenario>();
+            }
+
+            if (scenarioList == null)
+            {
+                GD.PrintErr($"Deserialized list is null for file: {path}");
+                return new Dictionary<int, Scenario>();
+            }
+
+            finalScenarioList.AddRange(scenarioList);
         }
 
-        List<Scenario>? scenarioList;
-        try
-        {
-            scenarioList = JsonSerializer.Deserialize<List<Scenario>>(jsonText, GetSerializerOptions());
-        }
-        catch (JsonException ex)
-        {
-            GD.PrintErr($"JSON Deserialization Error in {filePath}: {ex.Message}");
-            return new Dictionary<int, Scenario>();
-        }
-
-        if (scenarioList == null)
-        {
-            GD.PrintErr($"Deserialized list is null for file: {filePath}");
-            return new Dictionary<int, Scenario>();
-        }
-
-        return scenarioList.ToDictionary(s => s.Id, s => s);
+        return finalScenarioList.ToDictionary(s => s.Id, s => s);
     }
 
     private static string ReadFile(string filePath)
     {
-        if (!FileAccess.FileExists(filePath))
+        if (!Godot.FileAccess.FileExists(filePath))
         {
             return string.Empty;
         }
 
-        using var file = FileAccess.Open(filePath, FileAccess.ModeFlags.Read);
+        using var file = Godot.FileAccess.Open(filePath, Godot.FileAccess.ModeFlags.Read);
         if (file == null)
         {
             return string.Empty;

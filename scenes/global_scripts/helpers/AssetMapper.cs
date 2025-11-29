@@ -19,8 +19,8 @@ public static class AssetMapper
         {CharacterType.Narrator, ""},
         {CharacterType.SoftwareEngineer, "res://assets/images/characters/software_engineer.png"},
         {CharacterType.SeniorSoftwareEngineer, "res://assets/images/characters/senior_software_engineer.png"},
-        {CharacterType.Coworker1, "res://assets/images/characters/female_coworker_1.png"},
-        {CharacterType.Coworker2, "res://assets/images/characters/female_coworker_2.png"}
+        {CharacterType.FinanceCoworker, "res://assets/images/characters/female_coworker_1.png"},
+        {CharacterType.HrCoworker, "res://assets/images/characters/female_coworker_2.png"}
     };
 
     public static string GetBackgroundPath(BackgroundType key)

@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 // comparison types for requirements conditionals
 public enum ComparisonType
 {
@@ -39,8 +37,18 @@ public enum CharacterType
     Narrator,
     SoftwareEngineer,
     SeniorSoftwareEngineer,
-    Coworker1,
-    Coworker2,
+    FinanceCoworker,
+    HrCoworker,
+}
+
+public enum Stat
+{
+    Time,
+    Health,
+    Reputation,
+    Day,
+    Job,
+    Apprenticeship
 }
 
 // higher level game states
