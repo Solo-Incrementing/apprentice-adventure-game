@@ -1,0 +1,606 @@
+[
+  {
+    "Id": 900,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "After shutting down your laptop, you transition into your evening.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 901,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You think about how to spend the evening...",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 915,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "ComparisonType": "GreaterThanOrEqual",
+            "ComparisonValue": 1440
+          }
+        ]
+      },
+      {
+        "NextScenarioIndex": 902,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 902,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "What do you want to do?",
+    "IsMajorDecision": false,
+    "DecisionOptions": [
+      {
+        "Text": "Extra Study",
+        "NextNodeIndex": 903,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1140
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1320
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Apprenticeship",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Extra Work",
+        "NextNodeIndex": 904,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1020
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1200
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Job",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Prepare a Nice Dinner",
+        "NextNodeIndex": 905,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1080
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1140
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Health",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Browse Social Media",
+        "NextNodeIndex": 906,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1020
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1380
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Reputation",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Health",
+            "Operation": "Change",
+            "Value": -2,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 120,
+            "IsEffectPositive": false,
+            "Significance": "Significant"
+          }
+        ]
+      },
+      {
+        "Text": "Read a Book",
+        "NextNodeIndex": 907,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1020
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1260
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Health",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Reputation",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Do Laundry",
+        "NextNodeIndex": 908,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1020
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1080
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Reputation",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 60,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Prepare to Sleep",
+        "NextNodeIndex": 909,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "GreaterThanOrEqual",
+            "ComparisonValue": 1200
+          },
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1440
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Health",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Change",
+            "Value": 30,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      }
+    ],
+    "NextScenarios": []
+  },
+  {
+    "Id": 903,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You spend some extra time this evening to revise your apprenticeship learning.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 904,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You start planning your work for tomorrow to be more efficient.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 905,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You spend a while to cook dinner and savor it as a relaxing reward.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 906,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You spend a long time stuck on your phone keeping up with coworkers but your health deteriorates.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 907,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You spend a while reading a book to calm your mind and give you something to talk about.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 908,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You spend a while cleaning and ironing your clothes to prep for the next day and keep up appearances.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 909,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You complete some preparations for sleeping.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 914,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "ComparisonType": "GreaterThanOrEqual",
+            "ComparisonValue": 1440
+          }
+        ]
+      },
+      {
+        "NextScenarioIndex": 910,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 910,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "What will you do tonight?",
+    "IsMajorDecision": true,
+    "DecisionOptions": [
+      {
+        "Text": "Watch TV",
+        "NextNodeIndex": 911,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "Stat": "Reputation",
+            "Operation": "Change",
+            "Value": 4,
+            "IsEffectPositive": true,
+            "Significance": "Significant"
+          }
+        ]
+      },
+      {
+        "Text": "Read a Book",
+        "NextNodeIndex": 912,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1320
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Reputation",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          }
+        ]
+      },
+      {
+        "Text": "Sleep Early",
+        "NextNodeIndex": 913,
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 1260
+          }
+        ],
+        "Modifiers": [
+          {
+            "Stat": "Health",
+            "Operation": "Change",
+            "Value": 2,
+            "IsEffectPositive": true,
+            "Significance": "Major"
+          }
+        ]
+      }
+    ],
+    "NextScenarios": []
+  },
+  {
+    "Id": 911,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You watch a long episode of black mirror before you sleep. You have a lot to talk about with your coworkers tomorrow.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "Stat": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Set",
+            "Value": 480,
+            "IsEffectPositive": false,
+            "Significance": "Significant"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 912,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You read a chapter of a book as you fall asleep. You have something to talk about with your coworkers tomorrow.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "Stat": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Set",
+            "Value": 420,
+            "IsEffectPositive": false,
+            "Significance": "Major"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 913,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You get off screens early and darken your room to get long healthy sleep tonight.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 0,
+        "Requirements": [],
+        "Modifiers": [
+          {
+            "Stat": "Day",
+            "Operation": "Change",
+            "Value": 1,
+            "IsEffectPositive": true,
+            "Significance": "Minor"
+          },
+          {
+            "Stat": "Time",
+            "Operation": "Set",
+            "Value": 360,
+            "IsEffectPositive": false,
+            "Significance": "Minor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 914,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You realise there's no choice but to sleep late tonight.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 910,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 915,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You manage to take a glance at the clock. It's already midnight!",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 914,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 916,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "You reach home after a long commute",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  },
+  {
+    "Id": 917,
+    "Background": "BedroomEvening",
+    "Speaker": "Narrator",
+    "Dialogue": "After spending your entire day sick, you decide to get up.",
+    "IsMajorDecision": false,
+    "DecisionOptions": [],
+    "NextScenarios": [
+      {
+        "NextScenarioIndex": 901,
+        "Requirements": []
+      }
+    ]
+  }
+]

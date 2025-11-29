@@ -29,7 +29,7 @@
         "NextScenarioIndex": 17,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 540
           }
@@ -37,7 +37,13 @@
       },
       {
         "NextScenarioIndex": 3,
-        "Requirements": []
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 540
+          }
+        ]
       }
     ]
   },
@@ -53,14 +59,14 @@
         "NextNodeIndex": 4,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 480
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
@@ -73,26 +79,26 @@
         "NextNodeIndex": 6,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 375
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 390
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 15,
             "IsEffectPositive": false,
@@ -105,26 +111,26 @@
         "NextNodeIndex": 7,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 360
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 375
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Reputation",
+            "Stat": "Reputation",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 15,
             "IsEffectPositive": false,
@@ -137,33 +143,33 @@
         "NextNodeIndex": 8,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 360
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 480
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Reputation",
+            "Stat": "Reputation",
             "Operation": "Change",
             "Value": 2,
             "IsEffectPositive": true,
             "Significance": "Major"
           },
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Operation": "Change",
             "Value": -1,
             "IsEffectPositive": false,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 120,
             "IsEffectPositive": false,
@@ -176,26 +182,26 @@
         "NextNodeIndex": 9,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 390
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 420
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Reputation",
+            "Stat": "Reputation",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 30,
             "IsEffectPositive": false,
@@ -208,26 +214,26 @@
         "NextNodeIndex": 10,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 420
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 480
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Operation": "Change",
             "Value": 2,
             "IsEffectPositive": true,
             "Significance": "Major"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 60,
             "IsEffectPositive": false,
@@ -240,26 +246,21 @@
         "NextNodeIndex": 11,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 420
-          },
-          {
-            "StatName": "Time",
-            "Comparison": "LessThan",
-            "ComparisonValue": 510
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Reputation",
+            "Stat": "Reputation",
             "Operation": "Change",
             "Value": 2,
             "IsEffectPositive": true,
             "Significance": "Major"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 60,
             "IsEffectPositive": false,
@@ -297,7 +298,7 @@
         "Requirements": [],
         "Modifiers": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Change",
             "Value": 60,
             "IsEffectPositive": false,
@@ -389,7 +390,7 @@
         "NextScenarioIndex": 16,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "GreaterThanOrEqual",
             "ComparisonValue": 540
           }
@@ -397,7 +398,13 @@
       },
       {
         "NextScenarioIndex": 12,
-        "Requirements": []
+        "Requirements": [
+          {
+            "Stat": "Time",
+            "Comparison": "LessThan",
+            "ComparisonValue": 540
+          }
+        ]
       }
     ]
   },
@@ -414,14 +421,14 @@
         "Requirements": [],
         "Modifiers": [
           {
-            "StatName": "Job Progress",
+            "Stat": "Job",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
             "Significance": "Significant"
           },
           {
-            "StatName": "Apprenticeship Progress",
+            "Stat": "Apprenticeship",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
@@ -434,39 +441,32 @@
         "NextNodeIndex": 14,
         "Requirements": [
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Comparison": "LessThan",
             "ComparisonValue": 540
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Job Progress",
+            "Stat": "Job",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
             "Significance": "Significant"
           },
           {
-            "StatName": "Apprenticeship Progress",
+            "Stat": "Apprenticeship",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
             "Significance": "Significant"
           },
           {
-            "StatName": "Reputation",
+            "Stat": "Reputation",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
             "Significance": "Significant"
-          },
-          {
-            "StatName": "Time",
-            "Operation": "Change",
-            "Value": 60,
-            "IsEffectPositive": false,
-            "Significance": "Major"
           }
         ]
       },
@@ -475,24 +475,17 @@
         "NextNodeIndex": 15,
         "Requirements": [
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Comparison": "LessThan",
             "ComparisonValue": 40
           }
         ],
         "Modifiers": [
           {
-            "StatName": "Health",
+            "Stat": "Health",
             "Operation": "Change",
             "Value": 4,
             "IsEffectPositive": true,
-            "Significance": "Significant"
-          },
-          {
-            "StatName": "Time",
-            "Operation": "Set",
-            "Value": 1080,
-            "IsEffectPositive": false,
             "Significance": "Significant"
           }
         ]
@@ -513,14 +506,14 @@
         "Requirements": [],
         "Modifiers": [
           {
-            "StatName": "Day",
+            "Stat": "Day",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Set",
             "Value": 360,
             "IsEffectPositive": false,
@@ -543,14 +536,14 @@
         "Requirements": [],
         "Modifiers": [
           {
-            "StatName": "Day",
+            "Stat": "Day",
             "Operation": "Change",
             "Value": 1,
             "IsEffectPositive": true,
             "Significance": "Minor"
           },
           {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Set",
             "Value": 360,
             "IsEffectPositive": false,
@@ -569,22 +562,15 @@
     "DecisionOptions": [],
     "NextScenarios": [
       {
-        "NextScenarioIndex": 0,
+        "NextScenarioIndex": 917,
         "Requirements": [],
         "Modifiers": [
           {
-            "StatName": "Day",
-            "Operation": "Change",
-            "Value": 1,
-            "IsEffectPositive": true,
-            "Significance": "Minor"
-          },
-          {
-            "StatName": "Time",
+            "Stat": "Time",
             "Operation": "Set",
-            "Value": 360,
+            "Value": 1020,
             "IsEffectPositive": false,
-            "Significance": "Minor"
+            "Significance": "Significant"
           }
         ]
       }
