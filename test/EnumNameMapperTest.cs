@@ -10,7 +10,7 @@ public class EnumNameMapperTest
         AssertString(EnumNameMapper.GetCharacterName(CharacterType.SoftwareEngineer))
             .IsEqual("Software Engineer");
 
-        AssertString(EnumNameMapper.GetCharacterName(CharacterType.Coworker1))
+        AssertString(EnumNameMapper.GetCharacterName(CharacterType.FinanceCoworker))
             .IsEqual("Finance Coworker");
     }
 

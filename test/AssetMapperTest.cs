@@ -27,7 +27,7 @@ public class AssetMapperTest
         AssertString(AssetMapper.GetCharacterPath(CharacterType.SoftwareEngineer))
             .IsEqual("res://assets/images/characters/software_engineer.png");
 
-        AssertString(AssetMapper.GetCharacterPath(CharacterType.Coworker2))
+        AssertString(AssetMapper.GetCharacterPath(CharacterType.HrCoworker))
             .IsEqual("res://assets/images/characters/female_coworker_2.png");
     }
 

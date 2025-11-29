@@ -28,7 +28,7 @@ public class GameStatsTest
         // ARRANGE: Setup initial state (Health starts at 30) and the modifier.
         var modifier = new StatModifier
         {
-            StatName = "Health",
+            Stat = Stat.Health,
             Operation = OperationType.Change, // Add the value
             Value = 15,
             IsEffectPositive = true,
@@ -48,7 +48,7 @@ public class GameStatsTest
         // ARRANGE: Reputation starts at 0.
         var modifier = new StatModifier
         {
-            StatName = "Reputation",
+            Stat = Stat.Reputation,
             Operation = OperationType.Set, // Overwrite the value
             Value = 75,
             IsEffectPositive = true,
@@ -70,7 +70,7 @@ public class GameStatsTest
 
         var modifier = new StatModifier
         {
-            StatName = "Job Progress",
+            Stat = Stat.Job,
             Operation = OperationType.Change, // Subtract the value
             Value = -20,
             IsEffectPositive = false,
