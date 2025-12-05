@@ -14,7 +14,7 @@ As a solo project, all responsibilities were handled by me.
 
 ## Play the game
 
-1.  **Prerequisites:** You can download the compiled executable for Windows 10/11 from the itch.io page at `[https://kilo-cant-concentrate.itch.io/the-apprentice-adventure]`
+1.  **Prerequisites:** You can download the compiled executable for Windows 10/11 from the `[itch.io](https://kilo-cant-concentrate.itch.io/the-apprentice-adventure)`
 2.  **Setup:** Navigate to the downloaded ZIP. Unzip the folder using the Windows file explorer or use a third party tool such as 7zip, and open the folder.
 3.  **Run:** Open/Execute the ApprenticeAdventure.exe file. Please ensure the ApprenticeAdventure.pck and any other data folders are within the main downloaded folder, they contain the required data for the game to run.
 
